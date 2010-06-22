@@ -1,0 +1,42 @@
+export svnbase=svn+ssh://intranet.trulia.com/usr/local/svnrepos/TRULIA
+export svntru=svn+ssh://intranet.trulia.com/usr/local/svnrepos/TRULIA/FE/www/branches/cobrand_merge
+export svnmobile=svn+ssh://intranet.trulia.com/usr/local/svnrepos/TRULIA/FE/www/branches/mobile
+export www=~/public_html/www/
+export rebny=~/public_html/residentialnyc/
+export cobrand=~/public_html/cobrand/
+export backyard=~/public_html/backyard/
+export map=~/public_html/map/
+export common=~/svn/common/include/
+export api=~/public_html/api4/
+export mobile=~/public_html/mobile2/
+export nm=~/public_html/newmobile/
+export cnn=~/public_html/cnn/
+
+alias tailerror='tail -f /etc/httpd/logs/error_log'
+alias taillog='tail -f /etc/httpd/logs/access_log'
+alias tailphp='tail -f /tmp/php.log'
+alias api='cd $api'
+alias www='cd $www'
+alias nm='cd $nm'
+alias cnn='cd ~/public_html/cnn'
+alias map='cd $map'
+alias rebny='cd $rebny'
+alias cobrand='cd $cobrand'
+alias mobile='cd $mobile'
+alias backyard='cd $backyard'
+alias common='cd $common'
+alias cnn='cd $cnn'
+alias snv='svn'
+alias bustsvn='ssh intranet safe_checkin.sh &'
+alias outworx-server='ssh 125.19.43.252'
+alias widgets='cd ~/dev/TRULIA/FE/widgets/trunk'
+alias svndiff='svn merge --dry-run -r BASE:HEAD ./'
+alias bankrate='cd ~/dev/TRULIA/Applications/bankrate/trunk/'
+alias clean='sed -r -i "s#\t#  #g"'
+
+PATH=$PATH:~/bin/
+export PATH
+
+SSH_AUTH_SOCK=/tmp/ssh-tTeYUXm303/agent.303; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=304; export SSH_AGENT_PID;
+echo Agent pid 304;
