@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDXRateReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ReplyHeader>
+<CustomerTransactionIdentifier>CTIString</CustomerTransactionIdentifier>
+</ReplyHeader>
+<EstimatedCharges>
+<RateScale>01552</RateScale>
+<RateZone>5</RateZone>
+<CurrencyCode>USD</CurrencyCode>
+<BilledWeight>10.0</BilledWeight>
+<DiscountedCharges>
+<BaseCharge>57.45</BaseCharge>
+
+<TotalDiscount>0.00</TotalDiscount>
+<Surcharges>
+<Fuel>7.18</Fuel>
+<Other>0.00</Other>
+</Surcharges>
+<TotalSurcharge>7.18</TotalSurcharge>
+<NetCharge>64.63</NetCharge>
+<TotalRebate>0.00</TotalRebate>
+</DiscountedCharges>
+</EstimatedCharges>
+<SignatureOption>NONE</SignatureOption>
+
+</FDXRateReply>
