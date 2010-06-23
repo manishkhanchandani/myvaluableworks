@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head> 
+
+<title>CSS Flyout - Part One Demo</title>
+
+<meta http-equiv="content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="mssmarttagspreventparsing" content="true" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+<style type="text/css">
+
+html, body, ul, li {margin: 0; padding: 0; border: 0;}
+
+body {
+	color: #000; 
+	margin: 0 30px;			 
+	background: #eee;
+	font-size: 100.01%;
+	font-family: verdana, sans-serif;
+	text-align: center;
+}
+
+.wrapper {
+	width: 770px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border: 1px solid #666;
+	background: #fff;
+	text-align: left;
+}
+	
+h1 {color: #99d; font-size: 1.4em;}
+	
+h2 {font-size: 1em; font-family: verdana, sans-serif; margin: 10px;}
+	
+p {color: #000; font-size: .9em; margin: .6em 10px;}
+
+.navholder {
+	width: 8em;
+	float: left;
+	display: inline; /* doubled margin bug fix for IE/win */
+	margin: 15px 20px 5px 20px;
+}
+
+ul {
+  	width: 8em;
+	border-top: 1px solid #000; /* Makes top border on flyouts */
+	background: #edc;
+	}
+
+li {
+	list-style: none; /* kills the list item "bullet" markers */
+	position: relative;
+	font-weight: bold;
+	font-family: arial, sans-serif;
+	border-left: 1px solid #000; /* Makes side borders on flyouts */
+	border-right: 1px solid #000; /* Makes side borders on flyouts */
+	border-bottom: 1px solid #000; /* Makes bottom border on flyouts */
+	vertical-align: bottom; /* for IE5/win */
+	}
+
+ul a {
+	display: block;
+	padding: 5px 10px;
+	vertical-align: bottom; /* needed for IE5/win */
+	text-align: center;
+	text-decoration: none;
+	color: #552;
+	}
+
+ul ul { 
+	position: absolute;  
+	left: -3000px;
+	background: #fed; 
+	}	/* flyout elements need a background image or color to avoid bugs in IE/win */
+		
+li:hover {background: #ddf;}
+	
+ul li:hover ul {
+	left: 7em;
+	top: 4px;
+}
+
+ul a:hover {text-decoration: underline;}
+	
+/* \*/ /*/ 
+ul li ul {position: static;}
+/* */
+
+/* The block above hides the rule inside so that only IE5/Mac can see it.
+This rule causes the menus to be fully expanded vertically in that browser,
+allowing those users to access the navigation without needing to hover it. */
+
+</style>
+
+<!-- The following block is a conditional comment, and only IE/Win browsers will
+look inside the special "if IE" section. Within are the Jscript call, some height
+bug fixes, the margin-left hacks for older IE/Wins, and a noscript block. Inside
+the noscript block is another style block which also expands the menu similarly to 
+IE5/Mac, but it does this only when IE/Win is JavaScript disabled, and could not 
+otherwise access the menu flyouts. All these rules and the ones for IE5/Mac above 
+should follow the main styling, so that these "dumbed down" rules will override 
+the main rules. If they precede the main rules, then the nav can never be
+expanded for IE5/Mac, or IE/Win when in non-scripting mode. -->
+
+<!--[if IE]>
+
+      <style type="text/css">
+      
+        body {behavior: url(csshover.htc);}
+        
+        ul a, ul, li {height: 1%;} /* Holly hack fix for IE bugs */
+        		
+        li {
+        	margin-left: -16px;
+        	mar\gin-left: 0;
+        } /* special rules to correct older IE/win bullet zone problems */
+      
+      </style>
+
+      <noscript>
+        <style type="text/css">
+      
+	 		ul ul {position: static;}
+      
+        </style>
+      </noscript>
+			
+<![endif]-->
+ 
+</head>
+
+<body> 
+
+<div class="wrapper">
+
+<div class="navholder">
+	<ul>
+		<li style="z-index: 10;"><a href="#">Home</a>
+			<ul>
+				<li><a href="#">Table of Contents</a></li>
+				<li><a href="#">Site Map</a></li>
+				<li><a href="#">Guest Book</a></li>
+			</ul>
+		</li>
+		<li style="z-index: 9;"><a href="#">About Us</a>
+			<ul>
+				<li><a href="#">Resume</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Future Goals</a></li>
+			</ul>
+		</li>
+		<li style="z-index: 8;"><a href="#">Galleries</a>
+			<ul>
+				<li><a href="#">People</a></li>
+				<li><a href="#">Places</a></li>
+				<li><a href="#">Things</a></li>
+			</ul>
+		</li>
+		<li style="z-index: 7;"><a href="#">Articles</a>
+			<ul>
+				<li><a href="#">Current</a></li>
+				<li><a href="#">Favorites</a></li>
+				<li><a href="#">Archive</a></li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- end .navholder -->
+		
+<h1>Demo for CSS Flyouts - Part One</h1>
+
+<p>
+The construction is a simple nested set of lists, and is completely controlled and 
+styled via the CSS. Scripting is used only for the purpose of making IE/Win obey
+the :hover rules on non-links.
+</p>
+
+<p>
+This method works very well in IE5 through IE6, all fairly recent Gecko browsers,
+Opera 7, and Safari, but not in Explorer for the Mac, which fails to support the basic 
+popup method. IE5/Mac may be made to show the entire nested list set via a special targeted 
+rule, so that those users can access all the links.
+</p>
+
+<div style="clear: both;">&nbsp;</div>
+
+</div> <!-- end .wrapper -->
+
+</body>
+</html>
+
