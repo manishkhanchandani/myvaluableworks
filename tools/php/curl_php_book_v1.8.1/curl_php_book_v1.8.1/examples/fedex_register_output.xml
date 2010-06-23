@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDXSubscriptionReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FDXSubscriptionReply.xsd">
+<ReplyHeader>
+<CustomerTransactionIdentifier>String</CustomerTransactionIdentifier>
+</ReplyHeader>
+<MeterNumber>1154634</MeterNumber>
+<SubscribedService>FedEx Express Shipping</SubscribedService>
+<SubscribedService>FedEx Ground Shipping</SubscribedService>
+</FDXSubscriptionReply>
